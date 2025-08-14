@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Mobile Menu Demo</title>
+</head>
+<body class="bg-gray-900 text-white">
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 glass py-4 px-6 bg-gray-800">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="text-3xl font-bold mr-2">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <div class="text-xl font-bold">NFTreasure</div>
+      </div>
+
+      <nav id="desktop-nav" class="hidden md:flex items-center space-x-8">
+        <span class="hover:text-brand-purple transition cursor-pointer">Home</span>
+        <span class="hover:text-brand-purple transition cursor-pointer">Collections</span>
+        <span class="hover:text-brand-purple transition cursor-pointer">Marketplace</span>
+        <span class="hover:text-brand-purple transition cursor-pointer">Roadmap</span>
+        <span class="hover:text-brand-purple transition cursor-pointer">Community</span>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button id="connect-wallet" class="hidden md:block bg-purple-500 text-white py-2 px-6 rounded-full">
+          Connect Wallet
+        </button>
+        <button id="mobile-menu" class="md:hidden text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <nav id="mobile-nav" class="hidden md:hidden flex-col mt-4 space-y-4 px-6">
+      <span class="hover:text-brand-purple transition cursor-pointer">Home</span>
+      <span class="hover:text-brand-purple transition cursor-pointer">Collections</span>
+      <span class="hover:text-brand-purple transition cursor-pointer">Marketplace</span>
+      <span class="hover:text-brand-purple transition cursor-pointer">Roadmap</span>
+      <span class="hover:text-brand-purple transition cursor-pointer">Community</span>
+    </nav>
+  </header>
+
+  <main class="pt-24 px-6">
+    <p>Content goes here...</p>
+  </main>
+
+  <script>
+    const menuButton = document.getElementById('mobile-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    menuButton.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
